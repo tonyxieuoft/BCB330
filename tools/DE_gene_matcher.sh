@@ -1,4 +1,4 @@
-D#! /usr/bin/sh
+kD#! /usr/bin/sh
 
 # ======== Objectives ========
 # For every folder in categorized_dap_files, identifies the IRGs matching
@@ -10,7 +10,7 @@ D#! /usr/bin/sh
 #
 # ======== Folders ===========
 # Input: categorized_dap_files
-# Output: DE_gene_matcher.sh
+# Output: DE_gene_matches
 #
 
 cd ../categorized_dap_files
