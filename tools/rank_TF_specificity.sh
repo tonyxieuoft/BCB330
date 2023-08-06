@@ -1,55 +1,36 @@
 #! /usr/bin/sh
 
-cd ../DE_gene_matches
-mkdir ../temp
-mkdir ../temp2
+group=$1
 
-for directory in *
-do
+rm ../TF_specificity_rankings/$group 2> /dev/null
 
-	cd $directory
-	for file in *
-	do
-		DE_genes=$(tail -n 2 "$file" | head -n 1)
-		total_genes=$(tail -n 1 "$file")
-		ratio=$(echo "scale = 6; $DE_genes / $total_genes" | bc)
-		echo $ratio $file >> ../../temp/$directory
-	done
-	cd ..
-done
-
-cd ../temp
+cd ../DE_gene_matches/$group
 
 for file in *
 do
-	rm ../TF_specificity_rankings/$file 2> /dev/null
-	sort -r $file > ../temp2/$file
-
+	DE_genes=$(tail -n 2 "$file" | head -n 1)
+	total_genes=$(tail -n 1 "$file")
+	ratio=$(echo "scale = 6; $DE_genes / $total_genes" | bc)
+	echo $ratio $file >> ../../TF_specificity_rankings/$group
 done
 
-cd ..
-rm -r temp 
+cd ../../TF_specificity_rankings
 
-cd temp2
-for file in *
+sort -r -o $group $group
+
+finished_moving_zeroes=0
+
+while test $finished_moving_zeroes -eq 0
 do
-	while read line || test -n "$line"
-	do
-		if test $(echo "$line" | cut -d " " -f 1) = 0
-		then
-			:
-		else
-			echo "$line" >> ../TF_specificity_rankings/$file
-		fi
-	done < $file
-
-	while read line2 && test $(echo "$line2" | cut -d " " -f 1) = 0
-	do
-		echo "$line2" >> ../TF_specificity_rankings/$file
-	done < $file
+	first_line=$(head -n 1 $group)
+	if test $(echo "$first_line" | cut -d " " -f 1) = 0
+	then
+		echo "$first_line" >> $group
+		sed -i '1d' $group
+	else
+		finished_moving_zeroes=1
+	fi
 done
-cd ..
-rm -r temp2
 
 
 
