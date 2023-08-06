@@ -1,5 +1,18 @@
 #! /usr/bin/sh
 
+# ======== Objective ============
+# Normalizes the specificities for TFs originally calculated by the program rank_TF_specificities.sh
+#
+# ======== Arguments ============
+# num_genes: The number of genes in the set originally used for comparison. If considering IRG-binding,
+# num_genes is 91.
+# file_to_normalize: The ranked file to normalize
+#
+# ======== Folder ===============
+# Input: TF_specificity_rankings
+# Output: normalized_specificity_rankings
+
+
 num_genes=$1
 file_to_normalize=$2
 total_arabidopsis_genes=27416
