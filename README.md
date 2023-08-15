@@ -59,6 +59,6 @@ Some of the computational analysis conducted in the investigation was very simil
 - Labeling TRUE/FALSE for each TF based on whether they bound to at least one IRG. Although this was initially conducted before the development of the specificity scoring system, the results from the pipeline can be easily modified to represent this data.
 - Specificity rankings for the positive controls, based on their ChIP binding profiles.
 
-All of the above were omitted from this repository for the sake of clarity; however, they follow from or are inspired by the pipeline in very fairly straightforward ways.
+All of the above were omitted from this repository for the sake of clarity; however, they follow from the pipeline in very straightforward ways.
 
 
