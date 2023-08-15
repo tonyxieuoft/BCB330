@@ -22,7 +22,7 @@ Scripts 3-6 have functions mirroring the 4 steps outlined in the materials and m
 
 ## What Each Folder Contains
 
-The rationale behind the creation of folders were each output was partly to document the step-by-step process that the pipeline runs through. Additionally, although the end result was to create a ranking of specificity scores, some of the intermediate outputs such as the list of IRGs that each TF bound to were equally useful to view and store. The following folders are organized by order of analysis in the pipeline.
+Folders were created for each output step partly to document the step-by-step process that the pipeline runs through. Additionally, although the end result was to create a ranking of specificity scores, some of the intermediate outputs such as the list of IRGs that each TF bound to were equally useful to view and store. The following folders are organized by order of analysis in the pipeline.
 
 ### dap_plus_amp_original_files
 The original DAP-seq (and ampDAP-seq) files from the Plant Cistrome Database. This is the starting point for the analysis.   
