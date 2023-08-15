@@ -55,10 +55,11 @@ Contains the normalized and final specificity scores used for the investigation,
 
 Some of the computational analysis conducted in the investigation was very similar to, but not a direct part of the pipeline. This included: 
 - analysis on binding profile overlap between MYB63 and other DAP-seq represented TFs. The results of the analysis are contained in the `MYB63_matches` folder.
-- TF2Network result analysis. Some of this analysis is contained in the `TF2_network folder`.
 - Labeling TRUE/FALSE for each TF based on whether they bound to at least one IRG. Although this was initially conducted before the development of the specificity scoring system, the results from the pipeline can be easily modified to represent this data.
 - Specificity rankings for the positive controls, based on their ChIP binding profiles.
 
-All of the above were omitted from this repository for the sake of clarity; however, they follow from the pipeline in very straightforward ways.
+All of the above were omitted from this repository for the sake of clarity; however, they follow from the pipeline in very straightforward ways:
 
-
+1) In the case of identifying binding profile overlap between MYB63 and other DAP-seq represented TFs, steps 3-6 of the computational pipeline were used exactly (no changes whatsover), except that MYB63's binding profile replaced the list of IRGs.
+2) For the TRUE/FALSE labelling, simply take a list of specificity scores, mark "FALSE" the TFs with a score of zero, and mark "TRUE" otherwise.
+3) Like in step 1, to generate specificity score rankings for control TFs, simply replace their ChIP-seq binding profiles with the list of IRGs. 
