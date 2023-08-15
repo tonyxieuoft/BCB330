@@ -46,7 +46,7 @@ Given a set of TFs stored in `reference_TF_files` as input, the script `categori
 Contains lists of bound IRGs in the binding profiles for each DAP-seq represented TF. The files are organized into two-subfolders in the same style that they were organized in `categorized_dap_files`. The script `DE_gene_matcher.sh` was used to generate the output in DE_gene_matches and utilized the helper program DE_gene_matcher.c/DE_gene_matcher. It used `DE_genes.txt` as the input file containing the set of isoxaben-responsive genes to compare to. On the bottom of each file outputted into this folder was a count of the number of bound IRGs, as well as the total size of the DAP-seq binding profile for the specific TF.
 
 ### TF_specificity_rankings
-Given an input of a folder from `DE_gene_matches`, ranked the TFs in the folder from greatest to least in terms of "raw specificity score" using the script `rank_TF_specificity.sh`. Here, raw specificity score was defined as the "number of bound IRGs / number of total bound genes". 
+Given an input of a folder from `DE_gene_matches`, the TFs in the folder were ranked from greatest to least in terms of "raw specificity score" using the script `rank_TF_specificity.sh`. Here, raw specificity score was defined as the "number of bound IRGs / number of total bound genes". 
 
 ### normalized_specificity_rankings
 Contains the normalized and final specificity scores used for the investigation, with the folder `TF_specificity_rankings` as input. The script `normalize_rankings.sh` was used to carry out the normalization. 
